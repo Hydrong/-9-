@@ -1,31 +1,44 @@
-#pragma warning(disable:4996)
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+struct Person {
+	char name[1000];
+	int age;
+};
 int main() {
-	char* history[1000] = { 0 };
-	int history_count = 0;
-	char buf[1000];
-	while (1) {
-		printf("> ");
-		gets_s(buf, 1000);
-		char* t = (char*)malloc(strlen(buf) + 1);
-		strcpy(t, buf);
-		if (!strcmp(buf, "exit")) {
-			break;
-		}
-		else if (!strcmp(buf, "history")) {
-			printf("[ History ]\n");
-			for (int i = 0; i < history_count; ++i) {
-				printf("[%d] %s\n", i, history[i]);
-			}
-		}
-		history[history_count++] = t;
-	}
-	for (int i = 0; i < history_count; ++i) {
-		free(history[i]);
-	}
+	Person p1 = { "홍길동", 10 };
+	printf("name: %s, age: %d", p1.name, p1.age);
 }
+
+//#pragma warning(disable:4996)
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//int main() {
+//	char* history[1000] = { 0 };
+//	int history_count = 0;
+//	char buf[1000];
+//	int run = 1;
+//	while (run) {
+//		printf("> ");
+//		gets_s(buf, 1000);
+//		char* t = (char*)malloc(strlen(buf) + 1);
+//		strcpy(t, buf);
+//		if (!strcmp(buf, "exit")) {
+//			run = 0;
+//		}
+//		else {
+//			if (!strcmp(buf, "history")) {
+//				printf("[ History ]\n");
+//				for (int i = 0; i < history_count; ++i) {
+//					printf("[%d] %s\n", i, history[i]);
+//				}
+//			}
+//			history[history_count++] = t;
+//		}
+//	}
+//	for (int i = 0; i < history_count; ++i) {
+//		free(history[i]);
+//	}
+//}
 
 //#include <stdio.h>
 //int main() {
