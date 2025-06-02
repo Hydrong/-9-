@@ -1,12 +1,28 @@
 #include <stdio.h>
 struct Person {
-	char name[1000];
+	char name[100];
 	int age;
 };
+void PrintPerson(Person* p) {
+	printf("name: %s, age: %d\n", p->name, p->age);
+}
 int main() {
 	Person p1 = { "홍길동", 10 };
-	printf("name: %s, age: %d", p1.name, p1.age);
+	PrintPerson(&p1);
 }
+
+//#include <stdio.h>
+//struct Person {
+//	char name[100];
+//	int age;
+//};
+//int main() {
+//	Person p1 = { "홍길동", 10 };
+//	Person p2 = { "Hong Gil-Dong", 20 };
+//	printf("name: %s, age: %d\n", p1.name, p1.age);
+//	printf("name: %s, age: %d\n", p2.name, p2.age);
+//	printf("p2.name[3]: %c\n", p2.name[3]);
+//}
 
 //#pragma warning(disable:4996)
 //#include <stdio.h>
